@@ -1,0 +1,294 @@
+﻿/* Step 3: Basic styles */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header & Navigation */
+header {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+    header h1 {
+        margin: 0.5rem 0;
+        font-size: 2rem;
+    }
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+        nav ul li a:hover {
+            color: #1abc9c;
+        }
+
+/* Step 4: Portfolio sections */
+
+/* About Me */
+#about-me {
+    padding: 2rem;
+    text-align: justify;
+    max-width: 900px;
+    margin: auto;
+    font-size: 1.1rem;
+}
+
+/* Experience */
+#experience {
+    padding: 2rem;
+    background-color: #ecf0f1;
+}
+
+    #experience h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto; /* centriranje */
+    padding: 0 1rem;
+}
+
+    .timeline::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: #1abc9c;
+        transform: translateX(-50%);
+    }
+
+.timeline-item {
+    display: flex;
+    justify-content: flex-start;
+    margin: 2rem 0;
+    position: relative;
+}
+
+.timeline-date {
+    flex: 1;
+    text-align: right;
+    padding-right: 2rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.timeline-content {
+    flex: 2;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 20px; /* linija ide levo */
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        margin-left: 40px;
+    }
+
+    .timeline-date {
+        text-align: left;
+        padding: 0 0 0.5rem 0;
+    }
+}
+
+
+/* Skills */
+#skills {
+    padding: 2rem;
+    text-align: center;
+}
+
+    #skills ul {
+        list-style: none;
+        padding: 0;
+        display: inline-block;
+        text-align: left;
+    }
+
+        #skills ul li {
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+            #skills ul li::before {
+                content: "✔";
+                color: #1abc9c;
+                font-weight: bold;
+                margin-right: 0.5rem;
+            }
+
+/* Contact Form */
+#contact {
+    padding: 2rem;
+    background-color: #ecf0f1;
+}
+
+    #contact form {
+        max-width: 600px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    #contact label {
+        font-weight: bold;
+    }
+
+    #contact input,
+    #contact textarea {
+        padding: 0.7rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-family: inherit;
+        font-size: 1rem;
+    }
+
+    #contact button {
+        background-color: #1abc9c;
+        color: #fff;
+        border: none;
+        padding: 0.8rem;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+    }
+
+        #contact button:hover {
+            background-color: #16a085;
+        }
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* Step 5: Responsive design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    #projects article {
+        margin: 1rem;
+    }
+}
+
+/* Step 6: Cross-browser compatibility (vendor prefixes) */
+#contact button {
+    -webkit-transition: background-color 0.3s ease;
+    -moz-transition: background-color 0.3s ease;
+    -o-transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease;
+}
+
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        background-color: #2c3e50;
+        padding: 1rem;
+    }
+
+        nav ul.show {
+            display: flex;
+        }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+    .timeline::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: #1abc9c;
+        transform: translateX(-50%);
+    }
+
+.timeline-item {
+    display: flex;
+    justify-content: flex-start;
+    margin: 2rem 0;
+    position: relative;
+}
+
+.timeline-date {
+    flex: 1;
+    text-align: right;
+    padding-right: 2rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.timeline-content {
+    flex: 2;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
