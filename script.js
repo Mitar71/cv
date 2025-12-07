@@ -17,9 +17,9 @@ document.querySelectorAll("nav a").forEach(anchor => {
     });
 });
 
-// Step 4: Interactivity for Projects
+// Step 4: Interactivity for Projects (ako dodaš #projects sekciju kasnije)
 
-// Filter projects by category (example categories: insurance, finance)
+// Filter projects by category
 function filterProjects(category) {
     const projects = document.querySelectorAll("#projects article");
     projects.forEach(project => {
@@ -59,50 +59,14 @@ images.forEach(img => {
     });
 });
 
-// Step 5: Form validation
-const form = document.querySelector("#contact form");
-form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    let valid = true;
-    const name = document.querySelector("#name");
-    const email = document.querySelector("#email");
-    const message = document.querySelector("#message");
-
-    // Reset previous errors
-    document.querySelectorAll(".error").forEach(el => el.remove());
-
-    // Name validation
-    if (name.value.trim() === "") {
-        showError(name, "Name is required");
-        valid = false;
-    }
-
-    // Email validation
-    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-    if (!email.value.match(emailPattern)) {
-        showError(email, "Please enter a valid email");
-        valid = false;
-    }
-
-    // Message validation
-    if (message.value.trim() === "") {
-        showError(message, "Message cannot be empty");
-        valid = false;
-    }
-
-    if (valid) {
-        alert("Form submitted successfully!");
-        form.reset();
-    }
-});
-
-// Helper function to show error messages
-function showError(input, message) {
-    const error = document.createElement("span");
-    error.classList.add("error");
-    error.style.color = "red";
-    error.style.fontSize = "0.9rem";
-    error.textContent = message;
-    input.insertAdjacentElement("afterend", error);
+// Step 5: Contact section enhancement (copy email to clipboard)
+const emailLink = document.querySelector('#contact a[href^="mailto:"]');
+if (emailLink) {
+    emailLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        const email = emailLink.getAttribute('href').replace('mailto:', '');
+        navigator.clipboard.writeText(email).then(() => {
+            alert(`Email address copied: ${email}`);
+        });
+    });
 }

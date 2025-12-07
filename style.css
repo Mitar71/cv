@@ -51,6 +51,12 @@ nav ul {
     font-size: 1.1rem;
 }
 
+    #about-me h2 {
+        text-align: center; /* naslov centriran */
+        margin-bottom: 1.5rem;
+    }
+
+
 /* Experience */
 #experience {
     padding: 2rem;
@@ -291,4 +297,17 @@ footer {
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
+
+
+/* Education */
+#education {
+    padding: 2rem;
+    background-color: #fff; /* ili #ecf0f1 ako želiš da se uklopi */
+}
+
+    #education h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
 
